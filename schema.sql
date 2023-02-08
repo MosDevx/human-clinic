@@ -50,3 +50,18 @@ CREATE TABLE med_histories_treatment (
     REFERENCES treatments (id)
     ON DELETE CASCADE
     );
+
+
+-- CREATE INDEXES ---
+
+CREATE INDEX patient_id_med_histories ON medical_histories(patient_id ASC);
+
+CREATE INDEX invoice_id_invoice_items ON invoice_items(invoice_id ASC);
+
+CREATE INDEX treatment_id_invoice_items ON invoice_items(treatment_id ASC);
+
+CREATE INDEX medical_history_id_invoices ON invoices(medical_history_id ASC);
+
+CREATE INDEX treatment_id_med_histories_treatment_asc ON med_histories_treatment(treatment_id ASC);
+
+CREATE INDEX medical_history_id_med_histories_treatment_asc ON med_histories_treatment(medical_history_id ASC); 
